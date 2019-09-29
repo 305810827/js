@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bindEvent</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<button id="click">点击</button>
+
+
+<script>
+    // $(document).ready(function () {
+    //     $('#click').bind('click',clickHandle1);
+    //     $('#click').bind('click',clickHandle2);
+    //     $('#click').unbind('click',clickHandle2);
+    // })
+
+    $(document).ready(function () {
+        $('#click').on('click',clickHandle1);
+        $('#click').on('click',clickHandle2);
+        $('#click').off('click',clickHandle2);
+    })
+    function clickHandle1() {
+        alert('clickHandle1');
+    }
+    function clickHandle2() {
+        alert('clickHandle2');
+    }
+</script>
+</body>
+</html>

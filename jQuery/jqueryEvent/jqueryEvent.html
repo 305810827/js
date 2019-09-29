@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jqueryEvent</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+<!--    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+</head>
+<body>
+    <button id="click">点击就消失</button>
+    <button id="dblClick">双击消失</button>
+    <button id="mouseOver">经过按钮消失</button>
+    <button id="mouseLeave">离开按钮消失</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#click').click(function () {
+                $(this).hide();
+            })
+            $('#dblClick').dblclick(function () {
+                $(this).hide();
+            })
+            $('#mouseOver').mouseover(function () {
+                $(this).hide();
+            })
+            $('#mouseLeave').mouseleave(function () {
+                $(this).hide();
+            })
+        })
+    </script>
+</body>
+</html>

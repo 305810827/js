@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>timer</title>
+</head>
+<body onload="settimeout()">
+    <button type="button" onclick="closeInterval()">停止setInterval计时器</button>
+    <button type="button" onclick="stopTimeOut()">停止setTimeOut计时器</button>
+    <p id="pid"></p>
+    <script>
+        //setInterval
+        let myTime = setInterval(function () {
+            getTime();
+        },1000)
+        function getTime() {
+            let d = new Date();
+            let time = d.toLocaleTimeString();
+            document.getElementById('pid').innerHTML = time;
+        }
+        function closeInterval() {
+            clearInterval(myTime)
+        }
+
+        //setTimeOut
+        let timeOut
+        function settimeout(){
+            alert('每个三秒弹出一次')
+            timeOut = setTimeout(function () {
+                            settimeout()
+                        },3000)
+        }
+        function stopTimeOut() {
+            clearTimeout(timeOut);
+        }
+
+    </script>
+</body>
+</html>

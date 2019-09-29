@@ -1,0 +1,8 @@
+.rectangle{
+    width: 200px;
+    height: 200px;
+    background-color: #a9a4a8;
+    color: #f30213;
+    font-size: 20px;
+    padding: 10px;
+}

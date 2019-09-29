@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="table.css">
+    <script src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div class="table-box">
+    <table>
+        <thead>
+        <tr class="check-all">
+            <th>
+                <input onclick="selectAll(this)" type="checkbox" style="zoom:250%;">
+                <span>全选</span>
+            </th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+        <tr>
+            <td><input class="checkBoxTop" type="checkbox" style="zoom:250%;"></td>
+            <td>100</td>
+            <td>张三</td>
+            <td>男</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td><input class="checkBoxTop" type="checkbox" style="zoom:250%;"></td>
+            <td>101</td>
+            <td>李四</td>
+            <td>女</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td><input class="checkBoxTop" type="checkbox" style="zoom:250%;"></td>
+            <td>102</td>
+            <td>王五</td>
+            <td>男</td>
+            <td>20</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+
+   function selectAll(that) {
+        console.log(that.checked);
+        let checkBoxs = $('.checkBoxTop')
+        for(let i = 0;i < checkBoxs.length; i++){
+            if(that.checked){
+                checkBoxs[i].checked = true;
+            }else{
+                checkBoxs[i].checked = false;
+            }
+        }
+
+    }
+
+    $('#table tr td input[type=checkbox]').mousedown(function () {
+        //let input=$(this).find('td:first-child').children('input[type=checkbox]');
+        //console.log(input);
+        $(this).prop("checked", function (i, val) {
+            return !val;
+        });
+    }, false)
+
+</script>
+</body>
+</html>

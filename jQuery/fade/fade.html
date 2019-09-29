@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fade</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js" ></script>
+    <style>
+        div{
+            width: 80px;
+            height: 80px;
+        }
+        div:nth-child(5){
+            background-color: yellow;
+        }
+        div:nth-child(6){
+            background-color: bisque;
+        }
+        div:nth-child(7){
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <button id="fadeOut">淡出</button>
+    <button id="fadeIn">淡入</button>
+    <button id="fadeToggle">淡入/淡出</button>
+    <button id="fadeTo">淡入达到指定透明度</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <script>
+        $(document).ready(function () {
+            $('#fadeOut').on('click',function () {
+                $('div').fadeOut(1000);
+            })
+
+            $('#fadeIn').on('click',function () {
+                $('div').fadeIn(1000);
+            })
+
+            $('#fadeToggle').on('click',function () {
+                $('div').fadeToggle(1000);
+            })
+
+            $('#fadeTo').on('click',function () {
+                $('div').fadeTo(1000,0.5);
+            })
+        })
+    </script>
+</body>
+</html>

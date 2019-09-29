@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js" ></script>
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        111
+        <p>222</p>
+        <p>333</p>
+    </div>
+    <button id="btn">remove删除按钮</button>
+    <br/>
+    <div id="div1">
+        444
+        <p>555</p>
+        <p>666</p>
+    </div>
+    <button id="btn1">empty删除按钮</button>
+<script>
+    $(document).ready(function () {
+        $('#btn').click(function () {
+            $('#div').remove();
+        })
+
+        $('#btn1').click(function () {
+            $('#div1').empty();
+        })
+    })
+</script>
+</body>
+</html>

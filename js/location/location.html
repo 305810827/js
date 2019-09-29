@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location</title>
+</head>
+<body>
+    <p id="hostName"></p>
+    <p id="pathName"></p>
+    <p id="port"></p>
+    <p id="protocol"></p>
+    <p id="href"></p>
+    <button onclick="assign()">assign</button>
+    <script>
+        function hostName() {
+            document.getElementById('hostName').innerHTML = '主机域名:' + window.location.hostname;
+        }
+        hostName();
+
+        function pathName() {
+            document.getElementById('pathName').innerHTML = '路径和文件名:' + window.location.pathname;
+        }
+        pathName();
+
+        function port() {
+            document.getElementById('port').innerHTML = '端口:' + window.location.port;
+        }
+        port();
+
+        function protocol() {
+            document.getElementById('protocol').innerHTML = 'web协议:' + window.location.protocol;
+        }
+        protocol();
+
+        function href() {
+            document.getElementById('href').innerHTML = 'url:' + window.location.href;
+        }
+        href();
+
+        function assign() {
+            window.location.assign('http://www.baidu.com');
+        }
+    </script>
+</body>
+</html>

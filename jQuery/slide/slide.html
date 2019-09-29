@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide</title>
+    <script src="../jquery-1.7.2.min.js"></script>
+    <style>
+        #slideDown,#slideUp,#div{
+            padding: 20px;
+            text-align: center;
+            background-color: yellow;
+            border: 1px solid darkgrey;
+        }
+        #div{
+            padding: 5px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slideDown">下滑动出现</div>
+    <div id="slideUp">上滑动消失</div>
+    <div id="div"></div>
+<script>
+    $(document).ready(function () {
+        $('#slideDown').click(function () {
+            $('#div').slideDown(1000);
+        })
+        $('#slideUp').click(function () {
+            $('#div').slideUp(1000);
+        })
+    })
+</script>
+</body>
+</html>

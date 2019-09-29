@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="travesingCSS.css"/>
+</head>
+<body>
+    <div id="div1">
+        div1
+        <div id="div2">
+            div2
+            <p id="pid">
+                <a>
+                    hello
+                </a>
+            </p>
+        </div>
+    </div>
+<script>
+    $(document).ready(function () {
+        $('#pid').parent().css({border:'3px solid red'});
+        //$('#pid').parents().css({border:'3px solid red'});
+        //$('#pid').parents('#div1').css({border:'3px solid red'});
+        $('a').parentsUntil('#div1').css({border:'3px solid red'});
+    })
+</script>
+</body>
+</html>

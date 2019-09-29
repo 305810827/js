@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+.container .banner{
+    width: 80%;
+    background-color: #6e6e6e;
+    margin: 100px auto;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #6e6e6e;
+}
+.container img{
+   width: 100%;
+}
+.container .banner ul{
+    list-style: none;
+}
+.container .banner ul li{
+    display: none;
+    opacity: 0;
+}
+.container .banner ul li:nth-child(1){
+    display: block;
+    opacity: 1;
+}
+.container .banner ul li img{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+}
+.container .banner ul li:first-child img{
+    position: relative;
+}
+.container .banner .preImg,.container .banner .nextImg{
+    padding: 15px 10px;
+    margin-top: -35px;
+    background-color: #000000;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    border-radius: 10px;
+    z-index: 10;
+}
+.container .banner .nextImg{
+    right: 0px;
+}
+.container .banner .preImg:hover,.container .banner .nextImg:hover{
+    opacity: 0.8;
+}
+.container .banner .jumpBtn{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
+.container .banner .jumpBtn ul{
+    margin-left: 30px;
+}
+.container .banner .jumpBtn ul li{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.9;
+    margin-left: 10px;
+}

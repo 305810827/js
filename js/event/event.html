@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <link href="event.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="onLoad()">
+    <button onclick="onClick()">单击事件</button>
+    <div class="rectangle" onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)"></div>
+    <div id="tip1"></div>
+    <div id="tip2"></div>
+    <input onchange="onChange()" onselect="onSelect()" onfocus="onFocus()" onblur="onBlur()" />
+</body>
+<script>
+    window.onunload = function() {
+        window.alert("页面关闭事件");
+    }
+
+    window.onbeforeunload = function() {
+        return "页面关闭事件";
+    }
+
+    function onLoad(){
+        window.alert("页面加载事件");
+    }
+    function onUnload(){
+        window.alert("页面关闭事件");
+    }
+
+    function onClick() {
+        window.alert("单击事件");
+    }
+    function onMouseOver(object) {
+        object.innerHTML="鼠标经过事件";
+    }
+    function onMouseOut(object) {
+        object.innerHTML="鼠标离开事件";
+    }
+    function onChange() {
+        let tip = window.document.getElementById("tip2");
+        tip.innerHTML = "文本内容改变事件"
+    }
+    function onSelect() {
+        let tip = window.document.getElementById("tip2");
+        tip.innerHTML = "文本框选中事件"
+    }
+    function onFocus() {
+        let tip = window.document.getElementById("tip1");
+        tip.innerHTML = "光标聚焦事件"
+    }
+    function onBlur() {
+        let tip = window.document.getElementById("tip1");
+        tip.innerHTML = "离开光标事件"
+    }
+</script>
+</html>

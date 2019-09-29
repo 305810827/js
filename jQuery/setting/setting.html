@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <p id="p1">这是一个p标签</p>
+    <button id="btn1">修改text</button>
+    <p id="p2">这是一个p标签</p>
+    <button id="btn2">修改html</button>
+    <br/>
+    <input id="input1" value="这是一个input输入框" />
+    <button id="btn3">修改input的value</button>
+    <br/>
+    <a id="aid" href="http://www.baidu.com">这是一个a标签</a>
+    <button id="btn4">修改a标签的href</button>
+
+    <p id="p3">hello world</p>
+    <button id="btn5">按钮</button>
+    <script>
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                $('#p1').text('text()');
+            });
+            $('#btn2').click(function () {
+                $('#p2').html('<a href="#">html()</a>');
+            });
+
+            $('#btn3').click(function () {
+                $('#input1').val('input.val()');
+            });
+
+            $('#btn4').click(function () {
+                $('#aid').attr({
+                    'href':'http://www.qq.com',
+                    'title':'a标签'
+                });
+            });
+
+            $('#btn5').click(function () {
+                $('#p3').text(function (i,oldText) {
+                    return 'old:'+oldText + '   new:新内容' + (i);
+                });
+            });
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    display: block;
+    width: 80px;
+}
+.main,.hmain{
+    background: linear-gradient(0deg, chocolate, gray);
+    width: 100px;
+    text-align: center;
+}
+li{
+    background-color: #eeeeee;
+    list-style: none;
+}
+.main a,.hmain a{
+    color: white;
+    background-image: url("img/menu-right.png");
+    background-repeat: no-repeat;
+    background-position: -10px center;
+    background-size: 40px 30px;
+}
+.main ul li a,.hmain ul li a{
+    color: black;
+    background-image: none;
+}
+.hmain{
+    float: left;
+    margin-right: 1px;
+}
+.main ul,.hmain ul{
+    display: none;
+}

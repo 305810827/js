@@ -1,0 +1,141 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    width: 100%;
+    height: 120px;
+    border-bottom: 1px solid lightgray;
+    box-shadow: 0px 1px 1px lightgray;
+    background-color: white;
+}
+.logo{
+    padding: 10px;
+    margin-left: 50px;
+    float: left;
+}
+.logo img{
+    width: 230px;
+    height: 100px;
+}
+.container{
+    width: 550px;
+    height: 800px;
+    margin: 10px auto;
+    position: relative;
+}
+.top{
+    width: 550px;
+    height: 80px;
+    margin: 10px auto;
+    border-bottom: 3px solid black;
+}
+.shopCart{
+    width: 180px;
+    height: 77px;
+    border: 1px solid lightgray;
+    float: right;
+    cursor: pointer;
+    background-color: lightgray;
+}
+.cartIcon img{
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 20px 10px;
+}
+.cartText{
+    float: left;
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+    margin-left: 10px;
+}
+.shop{
+    float: left;
+}
+.shopOwner{
+    width: 550px;
+    height: 50px;
+    background-color: beige;
+    margin-top: -10px;
+    border-top: 1px solid gray;
+}
+.shopOwner span:nth-child(1){
+    font-weight: bold;
+    float: left;
+
+}
+.shopOwner span:nth-child(2){
+    float: right;
+}
+.shopContent{
+
+}
+.shopContent .image img{
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+.info{
+    width: 330px;
+    height: 200px;
+    float: left;
+}
+.shopContent .shopName{
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.shopContent .codeNumber{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.shopContent .number{
+
+}
+
+.shopContent .number span{
+    font-weight: bold;
+    margin-left: 10px;
+
+}
+.shopContent .number input{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.dec{
+    height: 50px;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    background-color: beige;
+}
+.settlement{
+    width: 550px;
+    height: 100px;
+}
+#total{
+    width: 270px;
+    height: 100px;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    float: left;
+    background-color: beige;
+}
+.settlement button{
+    width: 280px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+

@@ -1,0 +1,33 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-content:flex-start;
+    height: 677px;
+}
+
+#container:after{
+    content: ' ';
+    flex-grow: 999999999999999999999999999;
+}
+
+.hWaterfall{
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex:1;
+    border: 1px solid #a8a8a8;
+    box-shadow: 2px 2px 2px #a9a4a8;
+    border-radius: 5px;
+}
+
+.hWaterfall img{
+    height: 200px;
+    flex: 1;
+    width: auto;
+    object-fit: cover;
+}

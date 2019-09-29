@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="logo"><img src="img/loginlogo.jpg" alt=""></div>
+    <div class="login"><span>您好,欢迎光临1号店！</span><a href="#"><b>请登录</b></a></div>
+</div>
+<div class="container">
+    <h1>1号店注册</h1>
+    <form class="loginForm" action="">
+        <div id="iphone">
+            <input type="tel" placeholder="手机号码">
+            <span id="isIphone"></span>
+        </div>
+        <div class="code">
+            <input type="text" placeholder="验证码">
+            <button type="button" onclick="countDown(this)">获取验证码</button>
+            <span id="remainTime"></span>
+        </div>
+        <div id="password1">
+            <input type="password" placeholder="设置密码">
+            <span id="firstPassword"></span>
+        </div>
+        <div id="password2">
+            <input type="password" placeholder="确认密码">
+            <span id="confirm"></span>
+        </div>
+        <p>点击注册，表示您同意1号店《服务协议》</p>
+        <button class="register" type="submit">同意协议并注册</button>
+    </form>
+</div>
+<script>
+    let timeId = null;
+
+    function countDown(that) {
+        that.disabled = "disabled";
+        that.style.color = "gray";
+        let remainTime = document.getElementById("remainTime");
+        let i = 10;
+        timeId = setInterval(function () {
+            i = i - 1;
+            remainTime.innerHTML = `${i}`;
+            if (i <= 0) {
+                clearInterval(timeId);
+                that.disabled = "true";
+                that.style.color = "white";
+                remainTime.innerHTML = "";
+            }
+            console.log(i);
+        }, 1000)
+    }
+
+    $("#iphone input").blur(function (event) {
+        let number = event.target.value;
+        let p1 = /^(13[0-9]\d{8}|15[0-35-9]\d{8}|18[0-9]\{8}|14[57]\d{8})$/;
+        console.log(p1.test(number));
+        if (p1.test(number) == false) {
+            document.getElementById("isIphone").innerHTML = "请填写正确电话号码!!";
+        } else {
+            document.getElementById("isIphone").innerHTML = "";
+        }
+    })
+
+    $("#password1 input").blur(function (event) {
+        let length = event.target.value.length;
+        if (length < 6 || length > 10) {
+            document.getElementById("firstPassword").innerHTML = "密码长度为6~10位";
+        } else {
+            document.getElementById("firstPassword").innerHTML = "";
+        }
+    })
+
+    $("#password2 input").blur(function (event) {
+        let password1 = $("#password1 input").val();
+        let password2 = event.target.value;
+        console.log($("#password1 input").val());
+        console.log(event.target.value);
+        if (password1 != password2) {
+            document.getElementById("confirm").innerHTML = "两次密码不一致";
+        } else {
+            document.getElementById("confirm").innerHTML = "";
+        }
+    })
+
+</script>
+</body>
+</html>

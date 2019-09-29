@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+</head>
+<body onload="clock()">
+    <div id="div"></div>
+<script>
+    let date = new Date();
+    let hour = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    document.write("date："+date + "<br/>");
+    document.write("获取年份 getFullYear："+date.getFullYear() + "<br/>");
+    document.write("获取毫秒 getTime："+date.getTime() + "<br/>");
+    document.write("获取当天星期几 getDay："+date.getDay() + "<br/>");
+    document.write("获取时 getHours："+hour + "<br/>");
+    document.write("获取分 getMinutes："+minutes + "<br/>");
+    document.write("获取秒 getSeconds："+seconds + "<br/>");
+
+    function clock() {
+        let date = new Date();
+        let hour = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let div = document.getElementById("div");
+        div.innerHTML = "时钟时间：" + hour + ":" + transform(minutes) + ":" + transform(seconds);
+        (setTimeout(function () {
+            clock();
+        },500))();
+    }
+    function transform(number) {
+        if(number < 10){
+            number = "0" + number;
+        }
+        return number;
+    }
+
+</script>
+</body>
+</html>

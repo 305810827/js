@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eventTarget</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <div id="div" style="width:200px;height: 300px;background-color: aqua;">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('body').on('click',targetHandle1);
+            $('#div').on('click',targetHandle2);
+            $('#div').on('click',targetHandle3);
+        })
+        function targetHandle1(event) {
+            console.log(event);
+        }
+        function targetHandle2(event) {
+            console.log(event);
+            event.stopPropagation();
+            // event.stopImmediatePropagation();
+        }
+        function targetHandle3(event) {
+            console.log(event);
+
+        }
+    </script>
+</body>
+</html>

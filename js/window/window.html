@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window</title>
+
+</head>
+<body>
+<!--    <button id="button1" onclick="open()">打开window新窗口</button>-->
+    <input type="button" onclick="windowOpen()" value="打开window新窗口" />
+    <button id="button2" onclick="windowClose()">关闭window窗口</button>
+    <br/>
+    <script>
+        document.write(`窗口宽度:${window.innerWidth},窗口高度:${window.innerHeight}`);
+        function windowOpen(){
+            window.open("new.html","newPage",'width = 100px,height = 200px,top = 10px,left = 100px');
+        }
+        function windowClose(){
+            window.close();
+        }
+    </script>
+</body>
+</html>

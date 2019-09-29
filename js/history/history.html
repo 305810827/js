@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history</title>
+</head>
+<body>
+    <button onclick="back()">页面后退</button>
+    <form>
+        <input type="text" id="username" />
+    </form>
+    <button id="btn" onclick="login()">登录</button>
+    <script>
+        function back() {
+            history.back();
+        }
+        function login() {
+            let username = document.getElementById('username');
+            if(username.value == 'hello'){
+                history.go(-1);
+            }else{
+                alert('密码错误');
+            }
+        }
+    </script>
+</body>
+</html>

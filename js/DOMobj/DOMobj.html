@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+    <p name="pName">p标签</p>
+    <p name="pName">p标签</p>
+    <p name="pName">p标签</p>
+    <p name="pName">p标签</p>
+    <br/>
+    <a id="aid" title="title属性">title属性</a>
+    <br/>
+    <ul id="ul"><li>1</li><li>2</li><li>3</li></ul>
+    <br/>
+    <div id="div">
+        <p id="pid">第一个p节点</p>
+    </div>
+    <script>
+        //获取name
+        function getName() {
+            let name = document.getElementsByName('pName');
+            document.write(`元素个数:${name.length}<br/>`)
+            let p = name[1];
+            p.innerHTML = '通过name改变元素内容';
+        }
+        getName();
+        //获取标签名
+        function getTagName() {
+            let name = document.getElementsByTagName('p');
+            let p = name[2];
+            p.innerHTML = '通过TagName改变元素内容';
+        }
+        getTagName();
+        //获取元素属性
+        function getAttribute() {
+            let aid = document.getElementById('aid');
+            let attribute = aid.getAttribute("title");
+            document.write(`a元素的title属性:---${attribute}<br/>`);
+        }
+        getAttribute();
+        //插入元素属性
+        function setAttribute() {
+            let aid = document.getElementById('aid');
+            aid.setAttribute('title','通过setAttribute改变元素属性');
+            let attribute = aid.getAttribute("title");
+            document.write(`修改后a元素的title属性:---${attribute}<br/>`);
+        }
+        setAttribute();
+        //获取子节点
+        function getChildNode() {
+            let ul = document.getElementById('ul');
+            let childNodes = ul.childNodes;
+            document.write(`访问ul第二子节点为 ${childNodes[1].innerHTML}<br/>`)
+        }
+        getChildNode();
+        //获取父节点
+        function getParentNode() {
+            let pid = document.getElementById('pid');
+            let div = pid.parentNode;
+            document.write(`访问父节点 ${div.nodeName}<br/>`)
+            document.write(`访问父节点 ${div.nodeType}<br/>`)
+        }
+        getParentNode();
+        //创建元素节点
+        function creatElement() {
+            let body = document.body;
+            let button = document.createElement('input');
+            button.type = 'button';
+            button.value = '按钮';
+            body.appendChild(button);
+        }
+        creatElement();
+        //创建文本节点
+        function creatTextNode() {
+            let body = document.body;
+            let text = document.createTextNode('新创建的文本');
+            body.appendChild(text);
+        }
+        creatTextNode();
+
+        //按指定位置插入节点
+        function insertBefore() {
+            let div = document.getElementById('div');
+            let pid = document.getElementById('pid');
+            let newP = document.createElement('p');
+            newP.innerHTML = '新插入的p元素'
+            div.insertBefore(newP,pid);
+        }
+        insertBefore();
+
+        //删除节点
+        function removeChild() {
+            let ul = document.getElementById('ul');
+            ul.removeChild(ul.childNodes[0]);
+        }
+        removeChild();
+
+        //网页尺寸
+        function offerSize() {
+            let width = document.documentElement.offsetWidth;
+            let height = document.documentElement.offsetHeight;
+            alert('offset宽'+width+'高'+height);
+        }
+        offerSize();
+
+        //网页尺寸
+        function scrollSize() {
+            let width = document.documentElement.scrollWidth;
+            let height = document.documentElement.scrollHeight;
+            alert('scroll宽'+width+'高'+height);
+        }
+        scrollSize();
+    </script>
+</body>
+</html>

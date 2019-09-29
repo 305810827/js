@@ -1,0 +1,137 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+ul{
+    list-style: none;
+}
+.container{
+    position: relative;
+    overflow: hidden;
+}
+.top{
+    margin: 10px 0px;
+    padding: 5px;
+    float: left;
+}
+.sortBtn{
+    width: 100px;
+    height: 62px;
+    line-height: 60px;
+    margin-right: 5px;
+    padding-left: 20px;
+    color: black;
+    background-color: white;
+    border: 1px solid #999999;
+    cursor: pointer;
+    float:left;
+}
+.sortBtn{
+    background-repeat: no-repeat;
+    background-position: 70px center;
+    background-size: 40px 30px;
+}
+.sortBtn:nth-child(1){
+    background-image: url("img/funnel.png");
+}
+.sortBtn:nth-child(2){
+    background-image: url("img/down.png");
+}
+.sortBtn:nth-child(3){
+    background-image: url("img/up.png");
+}
+.sortBtn:nth-child(1):hover{
+    background-image: url("img/funnelRed.png");
+}
+.sortBtn:nth-child(2):hover{
+    background-image: url("img/downRed.png");
+}
+.sortBtn:nth-child(3):hover{
+    background-image: url("img/upRed.png");
+}
+.sortBtn:hover{
+    background-color: #e8e8e8;
+    color: red;
+}
+
+.sortBtn1:nth-child(1){
+    background-color: #e8e8e8;
+    background-image: url("img/funnelRed.png");
+    color: red;
+}
+.sortBtn2:nth-child(2){
+    background-image: url("img/downRed.png");
+    background-color: #e8e8e8;
+    color: red;
+}
+.sortBtn3:nth-child(3){
+    background-image: url("img/upRed.png");
+    background-color: #e8e8e8;
+    color: red;
+}
+.content{
+    margin: 5px auto;
+    clear: both;
+    overflow: hidden;
+}
+.item{
+    width: 300px;
+    height: 500px;
+    border: 1px solid #ededed;
+    margin-right: 10px;
+    float: left;
+    overflow: hidden;
+    padding: 10px;
+}
+.item>a{
+    text-decoration: none;
+    color: black;
+}
+.imgbox{
+
+}
+.imgbox img{
+    width: 290px;
+    height: 290px;
+}
+.priceInfo{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.price{
+    float: left;
+}
+.deal{
+    float: right;
+    color: #888888;
+}
+.title{
+    margin-top: 15px;
+}
+.title>a{
+    text-decoration: none;
+    color: black;
+}
+.title>a:hover{
+    text-decoration: underline;
+    color: indianred;
+}
+.business{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.shop{
+    float: left;
+}
+.shop>a{
+    color: #888888;
+}
+.shop>a:hover{
+    color: #ff4040;
+}
+.location{
+    float: right;
+}

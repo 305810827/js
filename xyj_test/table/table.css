@@ -1,0 +1,27 @@
+
+.table-box {
+    width: 1000px;
+    height: 1000px;
+    margin: 200px auto;
+}
+
+table {
+    width: 100%;
+    margin:0px auto;
+    border: 1px solid #666666;
+    box-shadow: 5px 5px 5px #999999;
+}
+
+table td, table th {
+width: 100px;
+    height: 100px;
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid #666666;
+    font-size: 40px;
+}
+
+tr:hover {
+    background: lightblue;
+    cursor: pointer;
+}

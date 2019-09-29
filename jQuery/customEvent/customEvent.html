@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customEvent</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        let btm;
+        $(document).ready(function () {
+            btm = $('#btn');
+            btm.click(function () {
+                let e = jQuery.Event('myEvent');
+                btm.trigger(e);
+            });
+            btm.on('myEvent',function (event) {
+                console.log(event);
+            })
+        })
+
+    </script>
+</body>
+</html>

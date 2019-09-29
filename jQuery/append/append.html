@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <p id="p1">append</p>
+    <button id="btn1">按钮</button>
+    <br/>
+    <p id="p2">prepend</p>
+    <button id="btn2">按钮</button>
+    <br/>
+    <p id="p3">before</p>
+    <button id="btn3">按钮</button>
+    <br/>
+    <p id="p4">after</p>
+    <button id="btn4">按钮</button>
+    <br/>
+
+    <button onclick="appendText()">按钮</button>
+    <br/>
+<script>
+    $(document).ready(function () {
+        $('#btn1').click(function () {
+            $('#p1').append('this is append new content');
+        });
+
+        $('#btn2').click(function () {
+            $('#p2').prepend('this is prepend new content');
+        });
+
+        $('#btn3').click(function () {
+            $('#p3').before('this is before new content');
+        });
+
+        $('#btn4').click(function () {
+            $('#p4').after('this is after new content');
+        });
+
+
+    });
+    function appendText() {
+        let text1 = '<p>111</p>';
+        let text2 = $('<p></p>').text('222');
+        let text3 = document.createElement('p');
+        text3.innerHTML = '333';
+        $('body').append(text1,text2,text3);
+
+    }
+</script>
+</body>
+</html>

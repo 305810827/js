@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.7.2.min.js"></script>
+    <style>
+        .style1{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        .style2{
+            width: 100px;
+            height: 100px;
+            background-color: darkorchid;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+<script>
+    $(document).ready(function () {
+        // $('div').css({width:'200px',height:'200px',backgroundColor:'#555555'})
+        $('div').addClass('style1');
+        $('div').click(function () {
+            //$('div').addClass('style2');
+            $('div').toggleClass('style2');
+        });
+    });
+</script>
+</body>
+</html>

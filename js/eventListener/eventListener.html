@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container{
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="div">
+        <button id="eventListener">按钮</button>
+        <a href="http://www.baidu.com" id="aid">baidu</a>
+    </div>
+</div>
+    <script>
+        let event = document.getElementById("eventListener");
+        event.addEventListener("click", function (event) {
+            alert(event.type)
+            //阻止事件冒泡
+            event.stopPropagation();
+        })
+
+        // let container = document.getElementById('container');
+        // container.addEventListener('mouseover',function () {
+        //     this.style = "background-color:red;";
+        // },true)
+        // event.addEventListener("click", function (event) {
+        //     alert(event.target)
+        // })
+        event.addEventListener("click", button)
+        function button() {
+            alert("按钮")
+        }
+        event.removeEventListener("click", button)
+        //事件冒泡
+
+        let div = document.getElementById("div");
+        div.addEventListener("click", function (event) {
+            alert(event.target)
+        })
+
+        let a = document.getElementById("aid");
+        a.addEventListener("click",function (event) {
+            //event.stopPropagation();
+            event.preventDefault()
+        })
+
+    </script>
+</body>
+</html>

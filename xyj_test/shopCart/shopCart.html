@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="shopCart.css">
+    <script src="../jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="logo"><img src="img/loginlogo.jpg" alt=""></div>
+</div>
+<div class="container">
+    <div class="top">
+        <div class="shopCart">
+            <div class="cartIcon"><img src="img/cars.png"/></div>
+            <div class="cartText">购物车</div>
+        </div>
+    </div>
+    <div class="shop">
+        <div class="shopOwner"><span>1号店满199减100</span><span>共1件商品</span></div>
+        <div class="shopContent">
+            <div class="image"><img src="img/shop1.png" alt=""></div>
+            <div class="info">
+                <p class="shopName">宝贝许愿坊</p>
+                <p class="codeNumber">深蓝 140码</p>
+                <div class="number">
+                        <input type="button" value="-" onclick="reduceSum(this)"/>
+                        <span>1</span>
+                        <input type="button" value="+" onclick="addSum(this)" />
+                    <span class="money">¥190</span>
+                </div>
+            </div>
+            <div class="dec">参加一项促销，节约成本¥100</div>
+        </div>
+    </div>
+    <div class="shop">
+        <div class="shopOwner"><span>1号店</span><span>共1件商品</span></div>
+        <div class="shopContent">
+            <div class="image"><img src="img/shop2.png" alt=""></div>
+            <div class="info">
+                <p class="shopName">亨氏</p>
+                <p class="codeNumber">草莓山楂枸杞</p>
+                <div class="number">
+                    <input type="button" value="-" onclick="reduceSum(this)"/>
+                    <span>1</span>
+                    <input type="button" value="+" onclick="addSum(this)" />
+                    <span class="money">¥5.8</span>
+                </div>
+            </div>
+            <div class="dec"></div>
+        </div>
+    </div>
+    <div class="shop">
+        <div class="shopOwner"><span>珠韵首饰旗舰店</span><span>共1件商品</span></div>
+        <div class="shopContent">
+            <div class="image"><img src="img/shop1.png" alt=""></div>
+            <div class="info">
+                <p class="shopName">珠韵首饰</p>
+                <p class="codeNumber">淡水白色近圆珍珠</p>
+                <div class="number">
+                    <input type="button" value="-" onclick="reduceSum(this)"/>
+                    <span>1</span>
+                    <input type="button" value="+" onclick="addSum(this)" />
+                    <span class="money">¥758</span>
+                </div>
+            </div>
+            <div class="dec">意见反馈</div>
+        </div>
+    </div>
+    <div class="settlement">
+        <div id="total">合计 ¥953.8</div>
+        <button id="buttonNum">立即结算(3)</button>
+    </div>
+
+</div>
+<script>
+    let sum = 0;
+    let num = 0;
+    window.onload = function () {
+
+    }
+    function addSum(that) {
+        let number1 = Number(that.previousElementSibling.innerHTML);
+        let price = Number(that.nextElementSibling.innerHTML.replace(/^\d+(\.\d+)?$/ig,"").replace("¥",""));
+        let numNode = that.parentElement.parentElement.parentElement.previousElementSibling.childNodes[1].innerHTML;
+        let shopNum = numNode.replace(/[^0-9]/ig,"");
+        let newShopNumText = numNode.replace(shopNum,Number(shopNum)+1);
+        that.previousElementSibling.innerHTML = number1+1;
+        that.parentElement.parentElement.parentElement.previousElementSibling.childNodes[1].innerHTML = newShopNumText;
+        let totalPrice = Number(document.getElementById("total").innerHTML.slice(4));
+        let totalNum = Number(document.getElementById("buttonNum").innerHTML.slice(5,-1));
+        let sum = (totalPrice + price).toFixed(1);
+        console.log(totalNum);
+        document.getElementById("total").innerHTML = `合计 ¥${sum}`;
+        document.getElementById("buttonNum").innerHTML = `立即结算(${totalNum+1})`;
+    }
+    function reduceSum(that) {
+        console.log(that.nextElementSibling.innerHTML);
+        let numNode = that.parentElement.parentElement.parentElement.previousElementSibling.childNodes[1].innerHTML;
+        let number2 = Number(that.nextElementSibling.innerHTML)
+        let shopNum = numNode.replace(/[^0-9]/ig,"");
+        let price = Number(that.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML.replace(/^\d+(\.\d+)?$/ig,"").replace("¥",""));
+        let totalPrice = Number(document.getElementById("total").innerHTML.slice(4));
+        let totalNum = Number(document.getElementById("buttonNum").innerHTML.slice(5,-1));
+        let sum = (totalPrice - price).toFixed(1);
+        if(number2!=0)
+        {
+            that.nextElementSibling.innerHTML = number2 - 1;
+            that.parentElement.parentElement.parentElement.previousElementSibling.childNodes[1].innerHTML = numNode.replace(shopNum,Number(shopNum)-1);
+            document.getElementById("total").innerHTML = `合计 ¥${sum}`;
+            document.getElementById("buttonNum").innerHTML = `立即结算(${totalNum-1})`;
+        }
+    }
+
+</script>
+</body>
+</html>

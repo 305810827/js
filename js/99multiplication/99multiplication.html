@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>multiplication</title>
+</head>
+<body>
+    <script>
+        let str = "<table border='1' width='400px'>";
+        for(let i=1; i<=9; i++){
+            str+="<tr>"
+            for(let j=1; j<=i; j++){
+                str+=`<td>${j}*${i}=${i*j}</td>`
+            }
+            str+="</tr>"
+        }
+        str+="</table>";
+        document.write(str);
+    </script>
+</body>
+</html>
